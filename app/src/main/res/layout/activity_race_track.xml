@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingVertical="24dp"
+    tools:context=".RaceTrackActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Long Shot"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llRaceTrack"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/racetrack"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTitle">
+
+        <com.example.horseracing.Components.CharacterSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:character="@drawable/mario"
+            app:tile="@drawable/mario_tile" />
+
+        <com.example.horseracing.Components.CharacterSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:character="@drawable/pikachu"
+            app:tile="@drawable/pikachu_tile" />
+
+        <!--        <com.example.horseracing.Components.CharacterSeekBar-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginTop="16dp"-->
+        <!--            app:character="@drawable/nyancat"-->
+        <!--            app:tile="@drawable/nyancat_tile" />-->
+
+        <com.example.horseracing.Components.CharacterSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:character="@drawable/steve"
+            app:tile="@drawable/steve_tile" />
+
+        <com.example.horseracing.Components.CharacterSeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:character="@drawable/turbo"
+            app:tile="@drawable/turbo_tile" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/llBet1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llRaceTrack">
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="#aa5731"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:paddingStart="0dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                app:srcCompat="@drawable/mario" />
+
+            <EditText
+                android:id="@+id/eTxtMarioBet"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#e5ccc1"
+                android:gravity="center"
+                android:text="23"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="#ffd823"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginStart="16dp"
+            android:padding="8dp"
+            android:paddingStart="0dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                app:srcCompat="@drawable/pikachu" />
+
+            <EditText
+                android:id="@+id/eTxtPikachuBet"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#fff3bd"
+                android:gravity="center"
+                android:text="16"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/llBet1">
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="#14baba"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:paddingStart="0dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                app:srcCompat="@drawable/steve" />
+
+            <EditText
+                android:id="@+id/eTxtSteveBet"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#b8eaea"
+                android:gravity="center"
+                android:text="19"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:background="#284aea"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_marginStart="16dp"
+            android:padding="8dp"
+            android:paddingStart="0dp">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="4dp"
+                app:srcCompat="@drawable/turbo" />
+
+            <EditText
+                android:id="@+id/eTxtTurboBet"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#bec8f9"
+                android:gravity="center"
+                android:text="46"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
