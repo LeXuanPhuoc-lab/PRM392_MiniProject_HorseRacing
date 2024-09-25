@@ -6,4 +6,10 @@
     </style>
 
     <style name="Theme.HorseRacing" parent="Base.Theme.HorseRacing" />
+
+    <!--    Dashboard white theme background-->
+    <style name="Theme.DashboardTheme" parent="Theme.HorseRacing">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
 </resources>
