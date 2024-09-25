@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingVertical="24dp"
+    android:paddingTop="24dp"
     tools:context=".RaceTrackActivity">
 
     <TextView
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             app:character="@drawable/pikachu"
-            app:tile="@drawable/pikachu_tile" />
+            app:tile="@drawable/pikachu_tile_2" />
 
         <!--        <com.example.horseracing.Components.CharacterSeekBar-->
         <!--            android:layout_width="match_parent"-->
@@ -78,17 +78,17 @@
         app:layout_constraintTop_toBottomOf="@+id/llRaceTrack">
 
         <LinearLayout
-            android:layout_width="130dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="#aa5731"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="8dp"
+            android:padding="6dp"
             android:paddingStart="0dp">
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginHorizontal="4dp"
                 app:srcCompat="@drawable/mario" />
@@ -107,18 +107,18 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="130dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="#ffd823"
             android:gravity="center"
             android:orientation="horizontal"
             android:layout_marginStart="16dp"
-            android:padding="8dp"
+            android:padding="6dp"
             android:paddingStart="0dp">
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginHorizontal="4dp"
                 app:srcCompat="@drawable/pikachu" />
@@ -142,24 +142,25 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/llBet1">
 
         <LinearLayout
-            android:layout_width="130dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:background="#14baba"
             android:gravity="center"
             android:orientation="horizontal"
-            android:padding="8dp"
+            android:padding="6dp"
             android:paddingStart="0dp">
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_height="40dp"
                 android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/steve" />
 
             <EditText
@@ -176,20 +177,20 @@
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="130dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
             android:background="#284aea"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_marginStart="16dp"
-            android:padding="8dp"
+            android:padding="6dp"
             android:paddingStart="0dp">
 
             <ImageView
                 android:layout_width="0dp"
-                android:layout_height="50dp"
-                android:layout_weight="1"
+                android:layout_height="40dp"
                 android:layout_marginHorizontal="4dp"
+                android:layout_weight="1"
                 app:srcCompat="@drawable/turbo" />
 
             <EditText
@@ -204,6 +205,23 @@
                 android:textSize="20sp"
                 android:textStyle="bold" />
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/balance_hand" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
