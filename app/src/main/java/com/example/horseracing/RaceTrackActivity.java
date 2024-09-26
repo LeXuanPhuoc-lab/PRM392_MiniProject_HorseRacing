@@ -37,7 +37,7 @@ public class RaceTrackActivity extends AppCompatActivity {
     private List<String> winners = new ArrayList<>();
     private List<String> playerBets  = new ArrayList<>();
     private double currentBalance = 100;
-    private double initBalance = currentBalance;
+    private double initBalance;
     private double netChange;
     private int totalBet;
     @Override
@@ -68,6 +68,7 @@ public class RaceTrackActivity extends AppCompatActivity {
 
         // Set initial balance
         balance.setText(currentBalance + "");
+        initBalance = currentBalance;
 
         // Handle Start button click
         btnStart.setOnClickListener(new View.OnClickListener() {
@@ -294,6 +295,7 @@ public class RaceTrackActivity extends AppCompatActivity {
         // Calculate profit or loss
         netChange = currentBalance - initialBalance;
 
+        initBalance = currentBalance;
         // Display Toast message indicating profit or loss
         if (netChange > 0) {
             Toast.makeText(this, "You won $" + netChange + "!", Toast.LENGTH_LONG).show();
@@ -315,7 +317,7 @@ public class RaceTrackActivity extends AppCompatActivity {
     // Check if any of the player's bets match the winners
     private boolean checkWinningBets() {
         for (String bet : playerBets) {
-            if (winners.contains(bet) && currentBalance - initBalance > 0) {
+            if (winners.contains(bet) && netChange > 0) {
                 return true; // At least one match found
             }
         }
