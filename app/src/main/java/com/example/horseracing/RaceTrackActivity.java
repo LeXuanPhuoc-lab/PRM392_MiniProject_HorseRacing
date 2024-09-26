@@ -284,9 +284,9 @@ public class RaceTrackActivity extends AppCompatActivity {
         }
 
         // Deduct the total bet amount from the balance if they lose
-        if (!hasWinningBet) {
-            currentBalance -= getTotalBetAmount();
-        }
+//        if (!hasWinningBet) {
+//            currentBalance -= getTotalBetAmount();
+//        }
 
         // Update balance UI and show toast
         balance.setText(String.valueOf(currentBalance));
