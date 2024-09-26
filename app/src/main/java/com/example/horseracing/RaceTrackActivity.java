@@ -237,9 +237,9 @@ public class RaceTrackActivity extends AppCompatActivity {
         Intent it = new Intent(RaceTrackActivity.this, DashboardActivity.class);
 
         // Pass horse image, total bet, and winnings to the DashboardActivity
-        it.putExtra("horseImageId", getHorseImageId(firstPlace)); // Image ID for the 1st place horse
-        it.putExtra("totalBet", getTotalBetAmount()); // Total bet amount
-        it.putExtra("totalWin", 1); // Calculate total winnings based on bets
+        it.putExtra("firstPlaceImg", getHorseImageId(firstPlace)); // Image ID for the 1st place horse
+        it.putExtra("secondPlaceImg", getHorseImageId(secondPlace)); // Image ID for the 1st place horse
+        it.putExtra("thirdPlaceImg", getHorseImageId(thirdPlace)); // Image ID for the 1st place horse
         it.putExtra("result", checkWinningBets() ? 1 : 0); // 1 for win, 0 for lose
         it.putExtra("amount", Math.abs(netChange)); // Amount won or lost
 

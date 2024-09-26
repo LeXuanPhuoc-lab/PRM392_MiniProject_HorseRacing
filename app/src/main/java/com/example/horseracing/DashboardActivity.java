@@ -19,11 +19,10 @@ public class DashboardActivity extends AppCompatActivity {
     TextView tv_dashboard_result;
     TextView tv_dashboard_message;
     TextView tv_dashboard_amount;
-    TextView tv_totalBet;
-    TextView tv_totalWin;
     ImageView iv_dashboard_title;
-    ImageView iv_dashboard_horse_icon;
-    int imageId;
+    ImageView iv_firstPlace;
+    ImageView iv_secondPlace;
+    ImageView iv_thirdPlace;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +39,10 @@ public class DashboardActivity extends AppCompatActivity {
         tv_dashboard_result = (TextView) findViewById(R.id.tv_dashboard_result);
         tv_dashboard_message = (TextView) findViewById(R.id.tv_dashboard_message);
         tv_dashboard_amount = (TextView) findViewById(R.id.tv_dashboard_amount);
-        tv_totalBet = (TextView) findViewById(R.id.tv_totalBet);
-        tv_totalWin = (TextView) findViewById(R.id.tv_totalWin);
-//        tv_totalLose = (TextView) findViewById(R.id.tv_totalLose);
         iv_dashboard_title = (ImageView) findViewById(R.id.iv_dashboard_title);
-        iv_dashboard_horse_icon = (ImageView) findViewById(R.id.iv_dashboard_horse_icon);
+        iv_firstPlace = (ImageView) findViewById(R.id.iv_firstPlace);
+        iv_secondPlace = (ImageView) findViewById(R.id.iv_secondPlace);
+        iv_thirdPlace = (ImageView) findViewById(R.id.iv_thirdPlace);
 
 
         // Initiates dashboard properties
@@ -54,7 +52,9 @@ public class DashboardActivity extends AppCompatActivity {
 
         // Get intent data
         if(getIntent() != null){
-            int horseImageId = getIntent().getIntExtra("horseImageId", 0);
+            int firstPlaceImg = getIntent().getIntExtra("firstPlaceImg", 0);
+            int secondPlaceImg = getIntent().getIntExtra("secondPlaceImg", 0);
+            int thirdPlaceImg = getIntent().getIntExtra("thirdPlaceImg", 0);
             int totalBet = getIntent().getIntExtra("totalBet", 0);
             int totalWin = getIntent().getIntExtra("totalWin", 0);
             int result = getIntent().getIntExtra("result", 0);
@@ -66,12 +66,8 @@ public class DashboardActivity extends AppCompatActivity {
             message = isWin ? "Congratulation!" : "Never give up!";
             // Assign amount
             amount = fluctuationAmount;
-            // Assign horse image
-            imageId = horseImageId;
 
             // Assign dashboard element
-//            iv_dashboard_title.setImageResource(isWin
-//                    ? R.drawable.ic_win : R.drawable.ic_lose);
             iv_dashboard_title.setImageResource(R.drawable.ic_win);
             tv_dashboard_result.setText(isWin ? "YOU WIN" : "YOU LOSE");
             tv_dashboard_result.setTextColor(ContextCompat.getColor(this,
@@ -82,9 +78,9 @@ public class DashboardActivity extends AppCompatActivity {
                     : "- $" + amount);
             tv_dashboard_amount.setTextColor(ContextCompat.getColor(this,
                     isWin ? R.color.yellow : R.color.red));
-            tv_totalBet.setText("Total bet: " + totalBet);
-            tv_totalWin.setText("Win: " + totalWin);
-            iv_dashboard_horse_icon.setImageResource(imageId);
+            iv_firstPlace.setImageResource(firstPlaceImg);
+            iv_secondPlace.setImageResource(secondPlaceImg);
+            iv_thirdPlace.setImageResource(thirdPlaceImg);
         }
 
         // Popup customization
