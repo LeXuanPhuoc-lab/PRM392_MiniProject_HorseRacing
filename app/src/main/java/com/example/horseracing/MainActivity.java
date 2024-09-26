@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
              @Override
              public void onClick(View view) {
                  Intent it = new Intent(MainActivity.this, DashboardActivity.class);
-                 it.putExtra("horseImageId", R.drawable.pikachu);
+                 it.putExtra("horseImageId", R.drawable.ic_horse);
                  it.putExtra("totalBet", 2);
                  it.putExtra("totalWin", 2);
-                 it.putExtra("result", 1); // WIN
-//                 it.putExtra("result", 0); // LOSE
+//                 it.putExtra("result", 1); // WIN
+                 it.putExtra("result", 0); // LOSE
                  it.putExtra("amount", 100d);
 
                  startActivity(it);
