@@ -8,9 +8,11 @@ import android.os.Bundle;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.os.Handler;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +38,7 @@ public class RaceTrackActivity extends AppCompatActivity {
     private EditText pinkBet;
     private TextView balance;
     private Button btnStart;
+    private ImageView imgRule;
     private final Handler handler = new Handler();
     private boolean isRunning = false;
     private final List<String> winners = new ArrayList<>();
@@ -92,8 +95,6 @@ public class RaceTrackActivity extends AppCompatActivity {
                 startRace();
             }
         });
-
-
         if (getIntent() != null) {
             int redCharImageId = getIntent().getIntExtra("redCharImageId", 0);
             int blueCharImageId = getIntent().getIntExtra("blueCharImageId", 0);
