@@ -1,0 +1,65 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/rule_background"
+    android:gravity="start"
+    >
+
+
+<TextView
+android:id="@+id/tvTitle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hướng dẫn luật chơi"
+android:textSize="26sp"
+android:textStyle="bold"
+android:textColor="#FFD700"
+    android:layout_gravity="center_horizontal"
+    android:paddingBottom="24dp" />
+
+
+<TextView
+android:id="@+id/tvGameRules"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Người chơi đặt cược vào nhân vật mà bạn muốn cược. Không chấp nhận số tiền cược lớn hơn số vốn mà người chơi hiện có.\n\nNgười chơi được đặt cược tối đa vào 3 nhân vật.\n\nCơ cấu giải thưởng:\n\nVới mỗi nhân vật mà bạn đặt cược. Nếu:\n- Nhân vật được hạng nhất: tiền cược + tiền cược x2\n- Nhân vật được hạng nhì: tiền cược + tiền cược\n- Nhân vật được hạng ba: hoàn tiền\n- Từ hạng 4 trở đi: mất tiền đặt cược\n\nBạn sẽ không được tiếp tục khi không còn tiền."
+android:textSize="18sp"
+    android:padding="8dp"
+    android:lineSpacingExtra="6dp"
+    android:textColor="#FFFFFF"
+    android:background="#80000000"
+    android:layout_marginBottom="24dp" />
+
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:gravity="center"
+android:layout_marginTop="16dp">
+
+
+<Button
+    android:id="@+id/btnBack"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Quay Lại"
+    android:layout_marginEnd="16dp"
+    android:textColor="#FFFFFF"
+    android:backgroundTint="#FF6347"
+android:padding="12dp" />
+
+
+<Button
+    android:id="@+id/btnContinue"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tiếp Tục"
+    android:textColor="#FFFFFF"
+    android:backgroundTint="#32CD32"
+android:padding="12dp" />
+</LinearLayout>
+    </LinearLayout>

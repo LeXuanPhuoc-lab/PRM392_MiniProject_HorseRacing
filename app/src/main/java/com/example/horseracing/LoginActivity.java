@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         if (!checkInput()) {
             return;
         }
-        Intent intent = new Intent(this, SelectCharacters.class);
+        Intent intent = new Intent(this, RuleActivity.class);
         startActivity(intent);
     }
 }
