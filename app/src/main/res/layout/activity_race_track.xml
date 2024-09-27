@@ -52,7 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:character="@drawable/nyancat"
+            app:character="@drawable/turbo"
             app:tile="@drawable/blue_tile" />
 
         <com.example.horseracing.Components.CharacterSeekBar
@@ -60,7 +60,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:character="@drawable/steve"
+            app:character="@drawable/nyancat"
             app:tile="@drawable/pink_tile" />
 
         <com.example.horseracing.Components.CharacterSeekBar
@@ -68,7 +68,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:character="@drawable/turbo"
+            app:character="@drawable/steve"
             app:tile="@drawable/green_tile" />
     </LinearLayout>
 

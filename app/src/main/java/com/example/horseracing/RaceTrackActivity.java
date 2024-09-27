@@ -95,26 +95,33 @@ public class RaceTrackActivity extends AppCompatActivity {
                 startRace();
             }
         });
-        if (getIntent() != null) {
-            int redCharImageId = getIntent().getIntExtra("redCharImageId", 0);
-            int blueCharImageId = getIntent().getIntExtra("blueCharImageId", 0);
-            int greenCharImageId = getIntent().getIntExtra("greenCharImageId", 0);
-            int yellowCharImageId = getIntent().getIntExtra("yellowCharImageId", 0);
-            int pinkCharImageId = getIntent().getIntExtra("pinkCharImageId", 0);
+//        if (getIntent() != null) {
+//            int redCharImageId = getIntent().getIntExtra("redCharImageId", 0);
+//            int blueCharImageId = getIntent().getIntExtra("blueCharImageId", 0);
+//            int greenCharImageId = getIntent().getIntExtra("greenCharImageId", 0);
+//            int yellowCharImageId = getIntent().getIntExtra("yellowCharImageId", 0);
+//            int pinkCharImageId = getIntent().getIntExtra("pinkCharImageId", 0);
+//
+//            red.setCharacterDrawable(getDrawable(redCharImageId));
+//            blue.setCharacterDrawable(getDrawable(blueCharImageId));
+//            yellow.setCharacterDrawable(getDrawable(yellowCharImageId));
+//            pink.setCharacterDrawable(getDrawable(pinkCharImageId));
+//            green.setCharacterDrawable(getDrawable(greenCharImageId));
+//
+//            colorToCharImageId.put("Red", redCharImageId);
+//            colorToCharImageId.put("Blue", blueCharImageId);
+//            colorToCharImageId.put("Green", greenCharImageId);
+//            colorToCharImageId.put("Yellow", yellowCharImageId);
+//            colorToCharImageId.put("Pink", pinkCharImageId);
+//        }
 
-            red.setCharacterDrawable(getDrawable(redCharImageId));
-            blue.setCharacterDrawable(getDrawable(blueCharImageId));
-            yellow.setCharacterDrawable(getDrawable(yellowCharImageId));
-            pink.setCharacterDrawable(getDrawable(pinkCharImageId));
-            green.setCharacterDrawable(getDrawable(greenCharImageId));
-
-            colorToCharImageId.put("Red", redCharImageId);
-            colorToCharImageId.put("Blue", blueCharImageId);
-            colorToCharImageId.put("Green", greenCharImageId);
-            colorToCharImageId.put("Yellow", yellowCharImageId);
-            colorToCharImageId.put("Pink", pinkCharImageId);
-        }
+        colorToCharImageId.put("Red", R.drawable.mario);
+        colorToCharImageId.put("Yellow", R.drawable.pikachu);
+        colorToCharImageId.put("Blue", R.drawable.turbo);
+        colorToCharImageId.put("Pink", R.drawable.nyancat);
+        colorToCharImageId.put("Green", R.drawable.steve);
     }
+
 
     // Validate the bets before starting the race
     @SuppressLint("SetTextI18n")

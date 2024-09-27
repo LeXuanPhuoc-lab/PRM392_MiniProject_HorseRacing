@@ -2,16 +2,17 @@ package com.example.horseracing;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 public class RuleActivity extends AppCompatActivity {
     Button btnContinue;
-    Button btnBack;
 
     @Override
     protected void onCreate( Bundle savedInstanceState) {
@@ -22,17 +23,18 @@ public class RuleActivity extends AppCompatActivity {
         btnContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(RuleActivity.this,SelectCharacters.class);
+                Intent intent = new Intent(RuleActivity.this,RaceTrackActivity.class);
                 startActivity(intent);
             }
         });
-        btnBack = (Button) findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(RuleActivity.this,LoginActivity.class);
-                startActivity(intent);
-            }
-        });
+
+        // Get screen height
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int screenHeight = displayMetrics.heightPixels;
+            // Set minimum height to 50% of screen height
+        int minHeight = screenHeight / 2; // Or any percentage you want
+        ConstraintLayout layout = findViewById(R.id.container);
+        layout.setMinimumHeight(minHeight);
     }
 }

@@ -13,6 +13,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText username, password;
     Button btn;
     final static  String REQUIRE = "Required";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

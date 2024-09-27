@@ -73,7 +73,7 @@ public class CharacterSeekBar extends AppCompatSeekBar {
         int progressX = (int) (getProgress() / (float) getMax() * width);
 
         // Vẽ các ô đất thành hàng ngang tương ứng với đoạn đã đi qua
-        int numberOfTiles = progressX / tileSize; // Số lượng ô đất cần vẽ
+        int numberOfTiles = progressX / tileSize + 1; // Số lượng ô đất cần vẽ
         for (int i = 0; i < numberOfTiles; i++) {
             int tileX = i * tileSize; // Vị trí X của mỗi ô đất
             int tileY = height / 2 - tileSize / 2; // Vị trí Y của ô đất (nằm giữa SeekBar)
