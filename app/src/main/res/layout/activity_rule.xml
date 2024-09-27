@@ -1,0 +1,59 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@drawable/rule_background"
+    android:gravity="center"
+    android:backgroundTint="#80000000">
+
+<TextView
+android:id="@+id/tvTitle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Hướng dẫn luật chơi"
+android:textSize="24sp"
+android:textStyle="bold"
+android:textColor="#FFFFFF"
+android:layout_gravity="center_horizontal"
+android:paddingBottom="16dp"/>
+
+    <!-- Nội dung luật chơi -->
+<TextView
+android:id="@+id/tvGameRules"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:text="Người chơi đặt cược vào nhân vật mà bạn muốn cược. Không chấp nhận số tiền cược lớn hơn số vốn mà người chơi hiện có.\n\nNgười chơi được đặt cược tối đa vào 3 nhân vật.\n\nCơ cấu giải thưởng:\n\nVới mỗi nhân vật mà bạn đặt cược. Nếu:\n- Nhân vật được hạng nhất: tiền cược + tiền cược x2\n- Nhân vật được hạng nhì: tiền cược + tiền cược\n- Nhân vật được hạng ba: hoàn tiền\n- Từ hạng 4 trở đi: mất tiền đặt cược\n\nBạn sẽ không được tiếp tục khi không còn tiền."
+android:textSize="16sp"
+android:paddingBottom="16dp"
+android:lineSpacingExtra="4dp"
+android:textColor="#FFFFFF"/>
+
+    <!-- Nút quay lại và tiếp tục -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="horizontal"
+android:gravity="center">
+
+<!-- Nút Quay Lại -->
+<Button
+    android:id="@+id/btnBack"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Quay Lại"
+    android:layout_marginEnd="16dp"
+    android:textColor="#FFFFFF"
+    android:backgroundTint="#000000"/>
+
+<!-- Nút Tiếp Tục -->
+<Button
+    android:id="@+id/btnContinue"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Tiếp Tục"
+    android:textColor="#FFFFFF"
+    android:backgroundTint="#000000"/>
+</LinearLayout>
+    </LinearLayout>

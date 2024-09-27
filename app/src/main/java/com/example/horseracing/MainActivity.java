@@ -14,7 +14,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     Button btn_dashboard;
-
+    Button btnRule;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
                  it.putExtra("amount", 100d);
 
                  startActivity(it);
+             }
+         });
+         btnRule.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+                 Intent it = new Intent(MainActivity.this, DashboardActivity.class);
              }
          });
     }
