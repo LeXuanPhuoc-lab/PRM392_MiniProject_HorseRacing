@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.horseracing.Components.CharacterSeekBar;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class RaceTrackActivity extends AppCompatActivity {
@@ -41,8 +42,9 @@ public class RaceTrackActivity extends AppCompatActivity {
     private final List<String> playerBets = new ArrayList<>();
     private int currentBalance = 20;
     private int netChange;
+    private HashMap<String, Integer> colorToCharImageId = new HashMap<>();
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +92,27 @@ public class RaceTrackActivity extends AppCompatActivity {
                 startRace();
             }
         });
+
+
+        if (getIntent() != null) {
+            int redCharImageId = getIntent().getIntExtra("redCharImageId", 0);
+            int blueCharImageId = getIntent().getIntExtra("blueCharImageId", 0);
+            int greenCharImageId = getIntent().getIntExtra("greenCharImageId", 0);
+            int yellowCharImageId = getIntent().getIntExtra("yellowCharImageId", 0);
+            int pinkCharImageId = getIntent().getIntExtra("pinkCharImageId", 0);
+
+            red.setCharacterDrawable(getDrawable(redCharImageId));
+            blue.setCharacterDrawable(getDrawable(blueCharImageId));
+            yellow.setCharacterDrawable(getDrawable(yellowCharImageId));
+            pink.setCharacterDrawable(getDrawable(pinkCharImageId));
+            green.setCharacterDrawable(getDrawable(greenCharImageId));
+
+            colorToCharImageId.put("Red", redCharImageId);
+            colorToCharImageId.put("Blue", blueCharImageId);
+            colorToCharImageId.put("Green", greenCharImageId);
+            colorToCharImageId.put("Yellow", yellowCharImageId);
+            colorToCharImageId.put("Pink", pinkCharImageId);
+        }
     }
 
     // Validate the bets before starting the race
@@ -261,23 +284,6 @@ public class RaceTrackActivity extends AppCompatActivity {
 
     }
 
-    private int getHorseImageId(String horseName) {
-        switch (horseName) {
-            case "Red":
-                return R.drawable.mario;
-            case "Blue":
-                return R.drawable.nyancat;
-            case "Green":
-                return R.drawable.turbo;
-            case "Yellow":
-                return R.drawable.pikachu;
-            case "Pink":
-                return R.drawable.steve;
-            default:
-                return R.drawable.ic_horse; // Fallback icon
-        }
-    }
-
     // Announce 1st, 2nd, and 3rd place winners
     private void announceWinners() {
         String firstPlace = winners.get(0);
@@ -288,9 +294,9 @@ public class RaceTrackActivity extends AppCompatActivity {
         Intent it = new Intent(RaceTrackActivity.this, DashboardActivity.class);
 
         // Pass horse image, total bet, and winnings to the DashboardActivity
-        it.putExtra("firstPlaceImg", getHorseImageId(firstPlace)); // Image ID for the 1st place horse
-        it.putExtra("secondPlaceImg", getHorseImageId(secondPlace)); // Image ID for the 1st place horse
-        it.putExtra("thirdPlaceImg", getHorseImageId(thirdPlace)); // Image ID for the 1st place horse
+        it.putExtra("firstPlaceImg", colorToCharImageId.get(firstPlace)); // Image ID for the 1st place horse
+        it.putExtra("secondPlaceImg", colorToCharImageId.get(secondPlace)); // Image ID for the 1st place horse
+        it.putExtra("thirdPlaceImg", colorToCharImageId.get(thirdPlace)); // Image ID for the 1st place horse
         it.putExtra("firstPlace", firstPlace);
         it.putExtra("secondPlace", secondPlace);
         it.putExtra("thirdPlace", thirdPlace);
