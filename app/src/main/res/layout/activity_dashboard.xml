@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     android:background="@drawable/pop_bg"
     tools:context=".DashboardActivity">
 
@@ -31,14 +32,14 @@
         android:id="@+id/tv_dashboard_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:text="Win"
         android:textColor="@android:color/holo_red_light"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_thirdPlace" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
     <TextView
         android:id="@+id/tv_dashboard_message"
@@ -58,7 +59,7 @@
         android:id="@+id/tv_dashboard_amount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="You won $100!"
         android:textColor="#1BE42D"
         android:textSize="18sp"
@@ -80,61 +81,246 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/iv_dashboard_title" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:srcCompat="@drawable/medal_1st" />
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="45dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
+    <Button
+        android:id="@+id/backToRaceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:text="Back to race"
+        android:backgroundTint="#f49134"
+        android:layout_marginBottom="12dp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:srcCompat="@drawable/medal_3rd" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_dashboard_amount" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2"
-        app:srcCompat="@drawable/medal_2rd" />
+        app:layout_constraintTop_toBottomOf="@+id/backToRaceButton" />
 
-    <ImageView
-        android:id="@+id/iv_firstPlace"
-        android:layout_width="61dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:srcCompat="@drawable/ic_horse" />
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
-    <ImageView
-        android:id="@+id/iv_secondPlace"
-        android:layout_width="61dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/iv_firstPlace"
-        app:srcCompat="@drawable/ic_horse" />
+        <LinearLayout
+            android:id="@+id/llFirstPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/iv_thirdPlace"
-        android:layout_width="61dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView"
-        app:layout_constraintTop_toBottomOf="@+id/iv_secondPlace"
-        app:srcCompat="@drawable/ic_horse" />
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/medal_3rd" />
 
+            <ImageView
+                android:id="@+id/iv_firstPlace"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                app:srcCompat="@drawable/ic_horse" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp">
+
+                <ImageView
+                    android:id="@+id/firstPlaceTicket"
+                    android:layout_width="69dp"
+                    android:layout_height="46dp"
+                    android:contentDescription="red_ticket"
+                    app:srcCompat="@drawable/red_ticket" />
+
+                <TextView
+                    android:id="@+id/firstPlaceBet"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="28dp"
+                    android:background="@null"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/firstPlaceExpression"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="x3 = 15"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llSecondPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/medal_2rd" />
+
+            <ImageView
+                android:id="@+id/iv_secondPlace"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                app:srcCompat="@drawable/ic_horse" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp">
+
+                <ImageView
+                    android:id="@+id/secondPlaceTicket"
+                    android:layout_width="69dp"
+                    android:layout_height="46dp"
+                    android:contentDescription="red_ticket"
+                    app:srcCompat="@drawable/red_ticket" />
+
+                <TextView
+                    android:id="@+id/secondPlaceBet"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="28dp"
+                    android:background="@null"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/secondPlaceExpression"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="x2 = 10"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:srcCompat="@drawable/medal_1st" />
+
+            <ImageView
+                android:id="@+id/iv_thirdPlace"
+                android:layout_width="48dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="12dp"
+                app:srcCompat="@drawable/ic_horse" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp">
+
+                <ImageView
+                    android:id="@+id/thirdPlaceTicket"
+                    android:layout_width="69dp"
+                    android:layout_height="46dp"
+                    android:contentDescription="red_ticket"
+                    app:srcCompat="@drawable/red_ticket" />
+
+                <TextView
+                    android:id="@+id/thirdPlaceBet"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_gravity="center|start"
+                    android:layout_marginStart="28dp"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/thirdPlaceExpression"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="x1 = 5"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:text="Total bet:"
+                android:paddingLeft="12dp"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/totalBet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="= -12"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp">
+
+            <TextView
+                android:layout_width="221dp"
+                android:layout_height="wrap_content"
+                android:text="Total:"
+                android:paddingLeft="12dp"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/totalWin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="= 18"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
