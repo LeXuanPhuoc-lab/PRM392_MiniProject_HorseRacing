@@ -14,7 +14,7 @@ public class CharacterSeekBar extends AppCompatSeekBar {
     private Drawable characterDrawable;
     private Drawable tileDrawable;
     private final int tileSize = 30;
-    private final int marioSize = 60;
+    private final int marioSize = 80;
 
     public CharacterSeekBar(Context context) {
         super(context);

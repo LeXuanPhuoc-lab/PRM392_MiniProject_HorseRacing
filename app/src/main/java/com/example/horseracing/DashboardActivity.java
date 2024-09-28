@@ -28,8 +28,8 @@ public class DashboardActivity extends AppCompatActivity {
     ImageView iv_firstPlace;
     ImageView iv_secondPlace;
     ImageView iv_thirdPlace;
-    ImageView firstPlaceTicket, secondPlaceTicket, thirdPlaceTicket;
-    TextView firstPlaceExpression, secondPlaceExpression, thirdPlaceExpression, totalBet, totalWin, firstPlaceBet, secondPlaceBet, thirdPlaceBet;
+    ImageView firstPlaceTicket, secondPlaceTicket, thirdPlaceTicket, fourPlaceTicket, fifthPlaceTicket;
+    TextView firstPlaceExpression, secondPlaceExpression, thirdPlaceExpression, totalBet, firstPlaceBet, secondPlaceBet, thirdPlaceBet, fourPlaceBet, fifthPlaceBet;
     Button backToRaceButton;
 
     private HashMap<String, Integer> colorToTicketImageId = new HashMap<>();
@@ -65,14 +65,17 @@ public class DashboardActivity extends AppCompatActivity {
         firstPlaceTicket = findViewById(R.id.firstPlaceTicket);
         secondPlaceTicket = findViewById(R.id.secondPlaceTicket);
         thirdPlaceTicket = findViewById(R.id.thirdPlaceTicket);
+        fourPlaceTicket = findViewById(R.id.fourPlaceTicket);
+        fifthPlaceTicket = findViewById(R.id.fifthPlaceTicket);
         firstPlaceExpression = findViewById(R.id.firstPlaceExpression);
         secondPlaceExpression = findViewById(R.id.secondPlaceExpression);
         thirdPlaceExpression = findViewById(R.id.thirdPlaceExpression);
         firstPlaceBet = findViewById(R.id.firstPlaceBet);
         secondPlaceBet = findViewById(R.id.secondPlaceBet);
         thirdPlaceBet = findViewById(R.id.thirdPlaceBet);
+        fourPlaceBet = findViewById(R.id.fourPlaceBet);
+        fifthPlaceBet = findViewById(R.id.fifthPlaceBet);
         totalBet = findViewById(R.id.totalBet);
-        totalWin = findViewById(R.id.totalWin);
 
         // Initiates dashboard properties
         boolean isWin = false;
@@ -87,9 +90,13 @@ public class DashboardActivity extends AppCompatActivity {
             String firstPlace = getIntent().getStringExtra("firstPlace");
             String secondPlace = getIntent().getStringExtra("secondPlace");
             String thirdPlace = getIntent().getStringExtra("thirdPlace");
+            String fourPlace = getIntent().getStringExtra("fourPlace");
+            String fifthPlace = getIntent().getStringExtra("fifthPlace");
             int firstPlaceBetValue = getIntent().getIntExtra("firstPlaceBet", 0);
             int secondPlaceBetValue = getIntent().getIntExtra("secondPlaceBet", 0);
             int thirdPlaceBetValue = getIntent().getIntExtra("thirdPlaceBet", 0);
+            int fourPlaceBetValue = getIntent().getIntExtra("fourPlaceBet", 0);
+            int fifthPlaceBetValue = getIntent().getIntExtra("fifthPlaceBet", 0);
             int totalBetAmount = getIntent().getIntExtra("totalBetAmount", 0);
             int result = getIntent().getIntExtra("result", 0);
             int fluctuationAmount = getIntent().getIntExtra("amount", 0);
@@ -97,10 +104,14 @@ public class DashboardActivity extends AppCompatActivity {
             firstPlaceTicket.setImageResource(colorToTicketImageId.get(firstPlace));
             secondPlaceTicket.setImageResource(colorToTicketImageId.get(secondPlace));
             thirdPlaceTicket.setImageResource(colorToTicketImageId.get(thirdPlace));
+            fourPlaceTicket.setImageResource(colorToTicketImageId.get(fourPlace));
+            fifthPlaceTicket.setImageResource(colorToTicketImageId.get(fifthPlace));
 
             firstPlaceBet.setText(firstPlaceBetValue + "");
             secondPlaceBet.setText(secondPlaceBetValue + "");
             thirdPlaceBet.setText(thirdPlaceBetValue + "");
+            fourPlaceBet.setText(fourPlaceBetValue + "");
+            fifthPlaceBet.setText(fifthPlaceBetValue + "");
 
             firstPlaceExpression.setText("x3 = " + firstPlaceBetValue * 3);
             secondPlaceExpression.setText("x2 = " + secondPlaceBetValue * 2);
@@ -115,8 +126,6 @@ public class DashboardActivity extends AppCompatActivity {
             message = isWin ? "Congratulation!" : "Never give up!";
             // Assign amount
             amount = fluctuationAmount;
-
-            totalWin.setText("= " + (isWin ? "" : "-") + fluctuationAmount);
 
             // Assign dashboard element
             iv_dashboard_title.setImageResource(R.drawable.ic_win);

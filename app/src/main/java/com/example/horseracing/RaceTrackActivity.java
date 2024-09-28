@@ -46,6 +46,7 @@ public class RaceTrackActivity extends AppCompatActivity {
     private int currentBalance = 20;
     private int netChange;
     private HashMap<String, Integer> colorToCharImageId = new HashMap<>();
+    private final List<String> runningChars = new ArrayList<>();
 
     @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     @Override
@@ -53,6 +54,12 @@ public class RaceTrackActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_race_track);
+
+        runningChars.add("Red");
+        runningChars.add("Yellow");
+        runningChars.add("Green");
+        runningChars.add("Pink");
+        runningChars.add("Blue");
 
         idleSound = MediaPlayer.create(this, R.raw.idle_sound);
         startRaceSound = MediaPlayer.create(this, R.raw.start_race_sound);
@@ -308,9 +315,13 @@ public class RaceTrackActivity extends AppCompatActivity {
         it.putExtra("firstPlace", firstPlace);
         it.putExtra("secondPlace", secondPlace);
         it.putExtra("thirdPlace", thirdPlace);
+        it.putExtra("fourPlace", runningChars.get(0));
+        it.putExtra("fifthPlace", runningChars.get(1));
         it.putExtra("firstPlaceBet", getBetAmount(firstPlace));
         it.putExtra("secondPlaceBet", getBetAmount(secondPlace));
         it.putExtra("thirdPlaceBet", getBetAmount(thirdPlace));
+        it.putExtra("fourPlaceBet", getBetAmount(runningChars.get(0)));
+        it.putExtra("fifthPlaceBet", getBetAmount(runningChars.get(1)));
         it.putExtra("totalBetAmount", getTotalBetAmount());
         it.putExtra("result", checkWinningBets() ? 1 : 0); // 1 for win, 0 for lose
         it.putExtra("amount", Math.abs(netChange)); // Amount won or lost
@@ -348,8 +359,6 @@ public class RaceTrackActivity extends AppCompatActivity {
 
         // Update balance UI and show toast
         balance.setText(String.valueOf(currentBalance));
-
-        Toast.makeText(this, "Race finished! Balance updated: $" + currentBalance, Toast.LENGTH_LONG).show();
     }
 
     // Calculate total amount bet by the player
@@ -388,6 +397,7 @@ public class RaceTrackActivity extends AppCompatActivity {
             // Check if the SeekBar has reached the max
             if (seekBar.getProgress() >= seekBar.getMax() && !winners.contains(name)) {
                 winners.add(name);
+                runningChars.remove(name);
                 if (winners.size() == 3) {
                     isRunning = false; // Stop the race
                 }

@@ -24,7 +24,7 @@ public class SelectCharacters extends AppCompatActivity {
     private ImageAdapter imageAdapter;
     private String selectedAnimal;
 
-    private final List<String> animals = Arrays.asList("Lion", "Dog", "Turtle", "Dragon", "Horse");
+    private final List<String> animals = Arrays.asList("Pokemon", "Dragon ball", "One piece");
 
     private final Map<String, List<Integer>> animalImagesMap = new HashMap<>();
 
@@ -66,20 +66,15 @@ public class SelectCharacters extends AppCompatActivity {
         });
 
         // Khởi tạo dữ liệu hình ảnh cho từng loại động vật
-        animalImagesMap.put("Lion", Arrays.asList(
-                R.drawable.red_lion, R.drawable.blue_lion, R.drawable.green_lion, R.drawable.pink_lion, R.drawable.yellow_lion
+        animalImagesMap.put("Pokemon", Arrays.asList(
+                R.drawable.charlizard, R.drawable.squirtle, R.drawable.bullbasaur, R.drawable.pink_pokemon, R.drawable.pikachu
         ));
-        animalImagesMap.put("Dog", Arrays.asList(
-                R.drawable.red_dog, R.drawable.blue_dog, R.drawable.green_dog, R.drawable.pink_dog, R.drawable.yellow_dog
+        animalImagesMap.put("Dragon ball", Arrays.asList(
+                R.drawable.red_dgb, R.drawable.blue_dgb, R.drawable.picolo, R.drawable.mabu, R.drawable.yellow_dgb
         ));
-        animalImagesMap.put("Turtle", Arrays.asList(
-                R.drawable.red_turtle, R.drawable.blue_turtle, R.drawable.green_turtle, R.drawable.pink_turtle, R.drawable.yellow_turtle
-        ));
-        animalImagesMap.put("Dragon", Arrays.asList(
-                R.drawable.red_dragon, R.drawable.blue_dragon, R.drawable.green_dragon, R.drawable.pink_dragon, R.drawable.yellow_dragon
-        ));
-        animalImagesMap.put("Horse", Arrays.asList(
-                R.drawable.red_horse, R.drawable.blue_horse, R.drawable.green_horse, R.drawable.pink_horse, R.drawable.yellow_horse
+
+        animalImagesMap.put("One piece", Arrays.asList(
+                R.drawable.luffy, R.drawable.jinbe, R.drawable.zoro, R.drawable.chopper, R.drawable.sanji
         ));
 
         // Thiết lập Adapter cho Spinner
